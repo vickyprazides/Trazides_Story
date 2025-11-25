@@ -50,22 +50,23 @@ useEffect(() => {
             <button 
                 className="add-btn"
                 onClick={() => addToCart(product)}
-             > Agregar al carrito
+                > Agregar al carrito
             </button>
 
-         </div> 
+        </div> 
     
 
-         <button 
-         onClick={() => navigate(`/products/${product.id}`)
-         }> Ver Detalles
-</button>
-</div>
+            <button 
+                onClick={() => navigate(`/products/${product.id}`)}
+                > Ver Detalles
+            </button>
+
+        </div>
 
 
 
         ))}
-     </div>
+        </div>
    )
 }
 

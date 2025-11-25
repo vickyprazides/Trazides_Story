@@ -16,20 +16,19 @@ const NavBar = ({setToken}) => {
             <h1>Trazides Store</h1>
 
 
-      <div className="cart-info"
-      onClick={() => navigate("/cart")}
-      style={{ cursor: "pointer" }}
-      >
-        🛒 {totalItems}
-      </div>
+        <div className="cart-info"
+            onClick={() => navigate("/cart")}
+            style={{ cursor: "pointer" }}
+            > 🛒 {totalItems}
+        </div>
 
 
             <button 
-            className='log-out-btn' 
-            onClick= {() => logOutHandler()}> 
-            Log Out 
+                className='log-out-btn' 
+                onClick= {() => logOutHandler()}
+                > Log Out 
             </button>
-            </div>
+        </div>
     )
 }
 
