@@ -5,6 +5,9 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+
+//carrega o carrinho salvo no localStorage quando a página abre
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
@@ -28,9 +31,15 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+
+//remove do carrinho
+
   const removeFromCart = (id) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
+
+
+//aumenta a qtde de um item
 
   const increaseQty = (id) => {
     setCart((prev) =>
@@ -39,6 +48,8 @@ export const CartProvider = ({ children }) => {
       )
     );
   };
+
+//diminui a qtde e remove se chegar a zero
 
   const decreaseQty = (id) => {
     setCart((prev) =>
@@ -50,7 +61,12 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+//Limpa o carrinho inteiro
+
   const clearCart = () => setCart([]);
+
+
+  //soma dos itens (preço)
 
   const totalItems = cart.reduce((acc, item) => acc + item.qty, 0);
   const totalPrice = cart.reduce((acc, item) => acc + item.price * item.qty, 0).toFixed(2);
